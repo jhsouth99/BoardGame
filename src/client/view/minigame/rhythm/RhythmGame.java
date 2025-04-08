@@ -1,10 +1,16 @@
 package client.view.minigame.rhythm;
 
-import java.awt.*; 
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.util.concurrent.CountDownLatch;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
 // 메인 게임 프레임과 UI 초기화, 게임 결과 표시 담당
 public class RhythmGame extends JFrame {
 	

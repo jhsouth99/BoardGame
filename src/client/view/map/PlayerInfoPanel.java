@@ -5,7 +5,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import java.util.function.Consumer;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -29,7 +28,7 @@ public class PlayerInfoPanel extends JPanel {
 			add(blankLabels[i]);
 		}
 		add(btnReturn = new JButton("되돌아가기"));
-		
+
 		attributeLine = new JLabel[5];
 		attributeLine[0] = new JLabel("이름");
 		attributeLine[1] = new JLabel("x값(시작점은 0, 오른쪽으로 증가)");
@@ -51,7 +50,7 @@ public class PlayerInfoPanel extends JPanel {
 				add(labelTable[i][j]);
 			}
 		}
-		
+
 		btnReturn.setVisible(false);
 	}
 
@@ -103,7 +102,7 @@ public class PlayerInfoPanel extends JPanel {
 			}
 		}
 	}
-	
+
 	public void movePlayer(String name, int x, int y) {
 		for (int i = 0; i < labelTable.length; i++) {
 			if (labelTable[i][0].getText().equals(name)) {
@@ -113,7 +112,7 @@ public class PlayerInfoPanel extends JPanel {
 			}
 		}
 	}
-	
+
 	public void setPlayerEnd(String name) {
 		for (int i = 0; i < labelTable.length; i++) {
 			labelTable[i][4].setText("");
@@ -125,7 +124,7 @@ public class PlayerInfoPanel extends JPanel {
 			}
 		}
 	}
-	
+
 	public void giveBonus(String name, int bonus) {
 		for (int i = 0; i < labelTable.length; i++) {
 			if (labelTable[i][0].getText().equals(name)) {
@@ -140,13 +139,13 @@ public class PlayerInfoPanel extends JPanel {
 		lblWinner.setText(playerName + "가 승리!");
 
 		btnReturn.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				r.run();
 			}
 		});
-		
+
 		btnReturn.setVisible(true);
 	}
 }

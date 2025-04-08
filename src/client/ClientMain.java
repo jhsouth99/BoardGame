@@ -58,10 +58,10 @@ public class ClientMain {
 		// 게임 클라이언트 실행
 		GameClient client = new GameClient();
 		GameController controller = new GameController(client);
-		GameViewer viewer = new GameViewer(controller);
 
 		try {
 			client.connectToServer(ip, port);
+			GameViewer viewer = new GameViewer(controller);
 			System.out.println("연결 성공!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		} catch (IOException e) {
 			e.printStackTrace();

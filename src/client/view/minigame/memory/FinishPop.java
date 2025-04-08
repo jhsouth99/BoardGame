@@ -3,7 +3,6 @@ package client.view.minigame.memory;
 import java.awt.Button;
 import java.awt.Font;
 import java.awt.Frame;
-import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -34,7 +33,7 @@ public class FinishPop {
 		scoreLabel.setFont(new Font("", Font.BOLD, 18));
 		scoreLabel.setBounds(50, 90, 200, 30);
 		finishFrame.add(scoreLabel);
-		
+
 		Button confirmBtn = new Button("OK");
 		confirmBtn.setBounds(110, 140, 80, 30);
 		confirmBtn.addActionListener(new ActionListener() {
@@ -58,8 +57,8 @@ public class FinishPop {
 	}
 
 	private void closeAllFrames() {
-			matchCardsFrame.dispose();
-			finishFrame.dispose();
+		matchCardsFrame.dispose();
+		finishFrame.dispose();
 	}
 
 }

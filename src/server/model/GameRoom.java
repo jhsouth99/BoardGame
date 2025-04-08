@@ -2,6 +2,7 @@ package server.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import server.network.ClientHandler;
 
@@ -105,7 +106,7 @@ public class GameRoom {
 	}
 
 	public List<String> getPlayerNames() {
-		return players.stream().map(p -> p.getName()).toList();
+		return players.stream().map(p -> p.getName()).collect(Collectors.toList());
 	}
 
 	public boolean isReadyToPlay() {

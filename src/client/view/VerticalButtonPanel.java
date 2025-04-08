@@ -126,13 +126,25 @@ public class VerticalButtonPanel extends JPanel {
 	}
 
 	public void sortAndRefresh() {
-		Comparator<TitleContentButton> comparator = switch (currentSortOption) {
-		case TITLE_DESC -> Comparator.comparing(TitleContentButton::getTitle).reversed();
-		case TIMESTAMP_ASC -> Comparator.comparing(TitleContentButton::getTimestamp);
-		case TIMESTAMP_DESC -> Comparator.comparing(TitleContentButton::getTimestamp).reversed();
-		case CUSTOM -> customComparator;
-		default -> Comparator.comparing(TitleContentButton::getTitle);
-		};
+		Comparator<TitleContentButton> comparator;
+
+		switch (currentSortOption) {
+		case TITLE_DESC:
+			comparator = Comparator.comparing(TitleContentButton::getTitle).reversed();
+			break;
+		case TIMESTAMP_ASC:
+			comparator = Comparator.comparing(TitleContentButton::getTimestamp);
+			break;
+		case TIMESTAMP_DESC:
+			comparator = Comparator.comparing(TitleContentButton::getTimestamp).reversed();
+			break;
+		case CUSTOM:
+			comparator = customComparator;
+			break;
+		default:
+			comparator = Comparator.comparing(TitleContentButton::getTitle);
+			break;
+		}
 
 		buttons.sort(comparator);
 		removeAll();

@@ -106,13 +106,25 @@ public class VerticalLabelPanel extends JPanel {
 
     // 정렬 및 화면 갱신
 	public void sortAndRefresh() {
-		Comparator<TitleContentLabel> comparator = switch (currentSortOption) {
-		case TITLE_DESC -> Comparator.comparing(TitleContentLabel::getTitle).reversed();
-		case TIMESTAMP_ASC -> Comparator.comparing(TitleContentLabel::getTimestamp);
-		case TIMESTAMP_DESC -> Comparator.comparing(TitleContentLabel::getTimestamp).reversed();
-		case CUSTOM -> customComparator;
-		default -> Comparator.comparing(TitleContentLabel::getTitle);
-		};
+		Comparator<TitleContentLabel> comparator;
+
+		switch (currentSortOption) {
+		case TITLE_DESC:
+			comparator = Comparator.comparing(TitleContentLabel::getTitle).reversed();
+			break;
+		case TIMESTAMP_ASC:
+			comparator = Comparator.comparing(TitleContentLabel::getTimestamp);
+			break;
+		case TIMESTAMP_DESC:
+			comparator = Comparator.comparing(TitleContentLabel::getTimestamp).reversed();
+			break;
+		case CUSTOM:
+			comparator = customComparator;
+			break;
+		default:
+			comparator = Comparator.comparing(TitleContentLabel::getTitle);
+			break;
+		}
 
         labels.sort(comparator);
         removeAll();

@@ -32,7 +32,6 @@ public class Rsp {
 
 		ImageIcon[] imgHand1 = new ImageIcon[3];
 		ImageIcon[] imgHand2 = new ImageIcon[3];
-		ImageIcon imgVs = new ImageIcon();
 
 		imgHand1[0] = new ImageIcon("images/rsp/cr.png");
 		imgHand1[1] = new ImageIcon("images/rsp/cs.png");
@@ -150,6 +149,7 @@ public class Rsp {
 			public void windowClosing(WindowEvent e) {
 				frame.dispose();
 			}
+
 			@Override
 			public void windowClosed(WindowEvent e) {
 				latch.countDown();
@@ -163,7 +163,7 @@ public class Rsp {
 		frame.setVisible(true);
 
 	}
-	
+
 	public int getScore() {
 		return 5 * win;
 	}
@@ -196,5 +196,4 @@ public class Rsp {
 		}
 	}
 
-	
 }

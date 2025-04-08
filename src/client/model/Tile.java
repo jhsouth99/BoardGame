@@ -3,10 +3,8 @@ package client.model;
 import java.util.Set;
 
 import client.controller.GameController;
-import client.model.tiles.ToolTile;
 import client.model.tiles.BridgeEndTile;
 import client.model.tiles.BridgeStartTile;
-import client.model.tiles.EventTile;
 import common.model.Direction;
 
 /**
