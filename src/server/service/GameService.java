@@ -30,7 +30,7 @@ import server.network.GameServer;
 
 public class GameService {
 
-	public static final String ACCOUNT_FILE_PATH = "C:/Users/User1/g_accounts.txt";
+   public static String accountFilePath = System.getProperty("user.home") + "\\g_accounts.txt";
 
 	GameServer server;
 	List<GameRoom> rooms;
